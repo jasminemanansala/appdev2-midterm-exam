@@ -7,9 +7,13 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello, World!');
   }
+  else if (req.url === '/'){
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Date Accesed: '+ date.toISOString());
+  }
   else{
     res.setHeader('Content-Type', 'text/plain');
-    res.end(date.toISOString());
+    res.end('404 Not Found');
   }
 });
 
